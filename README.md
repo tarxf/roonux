@@ -3,24 +3,31 @@ A headless Roon Core (roonserver) running on a virtual machine.
 
 ## What is Roon?
 
-Roon is a digital audio delivery solution (subscription required) that can play your high resolution files to one or multiple endpoints, integrating it selected music subscriptions. [See how it works](https://roonlabs.com/howroonworks).
+Roon is a digital audio delivery solution (subscription required) that can stream your high resolution files to devices in your network. [See how it works](https://roonlabs.com/howroonworks).
 
-roonux will play the Roon Core (server part) and the Roon control will be required in order to play from the library. See more in the pre-requisites section.
+roonux is the Roon Core (server part) and the Roon application in either a desktop or mobile device will be required to play your library.
 
 ## Why roonux?
 
 Why Gamora? Good question. This repo contains the recipe to get it up and running in a virtualized environment, solve the dependencies, fix the runtime permissions and add persistent firewall rules; just for it to become visible to your Roon control application.
 
+### Options to roonux
+
+I have only tested the Roon app running in OSX, the rest of the options have not been tested.
+
+1. Roon application running in a desktop computer
+1. The [ROCK](https://kb.roonlabs.com/ROCK:_Getting_Started)
+1. [docker-roon](https://github.com/dubo-dubon-duponey/docker-roon)
+
 ## Pre-requisites
 
-While pre-requisites are listed below, I found this [How-To](https://computingforgeeks.com/how-to-install-vagrant-and-virtualbox-on-fedora/) that gets you Vagrant & Virtualbox setup on Fedora in the same set of instructions.
+It might be useful to know in advance that this [How-To](https://computingforgeeks.com/how-to-install-vagrant-and-virtualbox-on-fedora/) guide that provides the Vagrant & Virtualbox setup on Fedora. A non-Fedora Host OS could be used provided the requirements below are met.
 
-1. A machine to host the virtual machine. The virtual machine will require:
+1. A host computer that can provide:
     1. 2 cores and 2GB of RAM
-    1. A network interface visible by the Roon application
+    1. A network interface connected to the internet
 1. A [Roon control](https://roonlabs.com/downloads) (application) to play music
-1. [Vagrant](https://www.vagrantup.com/)
-1. Virtualbox with the extension pack
+1. [Vagrant](https://www.vagrantup.com/), the virtual machine manager; and Virtualbox with the extension pack
 1. A CIFS/SMB network share with your files
 
 ## Installation Steps
@@ -30,10 +37,15 @@ Execute the following instructions in the host machine in order to bring up the 
 ### On the Host Machine
 
 1. Clone this repository
+
     git clone https://github.com/tarxf/roonux.git
+
 1. Enter roonux
+
     cd roonux
+
 1. Bring up the virtual machine, it might ask which network interface can be used for bridging the VM out, select the interface that is connected to the network
+
     vagrant up --provider virtualbox
 
 Shall you require advanced configuration or troubleshooting of roonux, you can `vagrant ssh` into it. No instructions are currently provided to persist the VM across host reboots, shall you reboot your host machine then you'll need to `cd roonux && vagrant up` to bring it up again.
