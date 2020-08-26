@@ -38,15 +38,15 @@ Execute the following instructions in the host machine in order to bring up the 
 
 1. Clone this repository
 
-    git clone https://github.com/tarxf/roonux.git
+    `git clone https://github.com/tarxf/roonux.git`
 
 1. Enter roonux
 
-    cd roonux
+    `cd roonux`
 
 1. Bring up the virtual machine, it might ask which network interface can be used for bridging the VM out, select the interface that is connected to the network
 
-    vagrant up --provider virtualbox
+    `vagrant up --provider virtualbox`
 
 Shall you require advanced configuration or troubleshooting of roonux, you can `vagrant ssh` into it. No instructions are currently provided to persist the VM across host reboots, shall you reboot your host machine then you'll need to `cd roonux && vagrant up` to bring it up again.
 
@@ -61,3 +61,4 @@ You may have installed the Roon control application in either a desktop computer
 1. Go to settings, storage, add a network share (from the dropdown menu)
 1. Enter your CIFS/SMB credentials
 1. Watch the Roon Core import your library
+1. Play music
