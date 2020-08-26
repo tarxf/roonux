@@ -58,7 +58,9 @@ You may have installed the Roon control application in either a desktop computer
 1. If this is the first time you bring up the application, it will directly scan for a Roon Core and roonux should appear as an option
 1. if you have an existing Roon Core and want to see roonux, go to settings and disconnect from the current Roon Core, roonux should appear as an option
 1. Select roonux, login with your account
+![Choose Roon Core](img/choose-roon-core.jpg?raw=true "Choose Roon Core")
 1. Go to settings, storage, add a network share (from the dropdown menu)
-1. Enter your CIFS/SMB credentials
+![Network Share Location](img/network-share.jpg?raw=true "Network Share")
+1. Enter your CIFS/SMB details and save 
 1. Watch the Roon Core import your library
 1. Play music
