@@ -55,12 +55,13 @@ Shall you require advanced configuration or troubleshooting of roonux, you can `
 You may have installed the Roon control application in either a desktop computeror smartphone/tablet, any of those will help for viewing and configuring the Roon Core.
 
 1. Open the Roon application on your computer/device
-1. If this is the first time you bring up the application, it will directly scan for a Roon Core and roonux should appear as an option
-1. if you have an existing Roon Core and want to see roonux, go to settings and disconnect from the current Roon Core, roonux should appear as an option
-1. Select roonux, login with your account
-![Choose Roon Core](img/choose-roon-core.jpg?raw=true "Choose Roon Core")
-1. Go to settings, storage, add a network share (from the dropdown menu)
-![Network Share Location](img/network-share.jpg?raw=true "Network Share")
-1. Enter your CIFS/SMB details and save 
-1. Watch the Roon Core import your library
-1. Play music
+2. If this is the first time you bring up the application, it will directly scan for a Roon Core and roonux should appear as an option
+3. if you have an existing Roon Core and want to see roonux, go to settings and disconnect from the current Roon Core, roonux should appear as an option
+4. Select roonux, login with your account
+
+    ![Choose Roon Core](img/choose-roon-core.jpg?raw=true "Choose Roon Core")
+5. Go to settings, storage, add a network share (from the dropdown menu)
+    ![Network Share Location](img/network-share.jpg?raw=true "Network Share")
+6. Enter your CIFS/SMB details and save 
+7. Watch the Roon Core import your library
+8. Play music
