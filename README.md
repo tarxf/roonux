@@ -65,3 +65,9 @@ You may have installed the Roon control application in either a desktop computer
 6. Enter your CIFS/SMB details and save 
 7. Watch the Roon Core import your library
 8. Play music
+
+# References
+
+[1] LinuxInstall instructions from Roon Labs. https://kb.roonlabs.com/LinuxInstall
+[2] How Roon Works from Roon Labs. https://roonlabs.com/howroonworks
+[3] Hashicorp's Vagrant. https://www.vagrantup.com/
