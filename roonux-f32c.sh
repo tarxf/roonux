@@ -2,19 +2,20 @@
 
 set -o errexit
 
-# get pre-required repos
+# get pre-required repo for ffmpeg
 dnf -y install \
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-# update system and install dependencies
+# install dependencies
 dnf -y install ffmpeg iptables cifs-utils wget htop bzip2 \
     chkconfig iptables-services
 # get the roonserver install script, make it run and clean it up
-wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh
-sed -i 's/confirm "Do/echo "Do/g' roonserver-installer-linuxx64.sh
+[[ ! -f roonserver-installer-linuxx64.sh ]] && \
+    wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh && \
+    sed -i 's/confirm "Do/echo "Do/g' roonserver-installer-linuxx64.sh
 sh roonserver-installer-linuxx64.sh && rm roonserver-installer-linuxx64.sh
-# this is needed because SELinux
-/sbin/restorecon -v /opt/RoonServer/start.sh
+# restore selinux security context for Roon Server
+/sbin/restorecon /opt/RoonServer/start.sh
 # iptables to allow the server to communicate to the network
 iptables -A INPUT -s 224.0.0.0/4 -j ACCEPT
 iptables -A INPUT -d 224.0.0.0/4 -j ACCEPT
