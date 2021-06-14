@@ -13,9 +13,9 @@ dnf -y install ffmpeg iptables cifs-utils wget htop bzip2 \
 dnf -y update
 # get the roonserver install script, make it run and clean it up
 [[ ! -f roonserver-installer-linuxx64.sh ]] && \
-    wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh && \
-    sed -i 's/confirm "Do/echo "Do/g' roonserver-installer-linuxx64.sh
-sh roonserver-installer-linuxx64.sh && rm roonserver-installer-linuxx64.sh
+    wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh
+yes yes|sh roonserver-installer-linuxx64.sh
+rm roonserver-installer-linuxx64.sh
 # restore selinux security context for Roon Server
 /sbin/restorecon /opt/RoonServer/start.sh
 # iptables to allow the server to communicate to the network
