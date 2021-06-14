@@ -12,5 +12,5 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
     vb.cpus = "2"
   end
-  config.vm.provision "shell", path: "roonux-f32c.sh"
+  config.vm.provision "shell", path: "fedora-setup.sh"
 end
