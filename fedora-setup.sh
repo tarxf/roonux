@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 set -o errexit
 
@@ -9,6 +9,8 @@ dnf -y install \
 # install dependencies
 dnf -y install ffmpeg iptables cifs-utils wget htop bzip2 \
     chkconfig iptables-services
+# bring the system up to date
+dnf -y update
 # get the roonserver install script, make it run and clean it up
 [[ ! -f roonserver-installer-linuxx64.sh ]] && \
     wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh && \
