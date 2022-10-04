@@ -13,4 +13,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = "2"
   end
   config.vm.provision "shell", path: "fedora-setup.sh"
+  if File.file?("./user-setup.sh")
+    config.vm.provision "shell", path: "user-setup.sh"
+  end
 end
