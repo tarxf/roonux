@@ -8,7 +8,7 @@ dnf -y install \
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # install dependencies
 dnf -y install ffmpeg iptables cifs-utils wget htop bzip2 \
-    chkconfig iptables-services
+    chkconfig iptables-services nfs-utils
 # bring the system up to date
 dnf -y update
 # get the roonserver install script, make it run and clean it up
