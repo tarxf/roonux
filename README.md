@@ -13,20 +13,22 @@ Why Gamora? Good question. This repo contains the recipe to get it up and runnin
 
 ### Options to roonux
 
-1. The Roon application running in a desktop computer, it will work as a Roon Core and this is the fastest option
-1. The [ROCK](https://kb.roonlabs.com/ROCK:_Getting_Started)
-1. [docker-roon](https://github.com/dubo-dubon-duponey/docker-roon) Looks like a good option but I haven't tested it
+These are other options you can consider for running a Roon server:
+
+1. The Roon application running in a desktop computer, it will work as a Roon Core and this is the fastest option to setup.
+1. The [ROCK](https://kb.roonlabs.com/ROCK:_Getting_Started), this is Roon's provided solution.
+1. [docker-roon](https://github.com/dubo-dubon-duponey/docker-roon), a popular user-provided option that runs in docker.
 
 ## Pre-requisites
 
-It might be useful to know in advance that this [How-To](https://computingforgeeks.com/how-to-install-vagrant-and-virtualbox-on-fedora/) guide provides the Vagrant & Virtualbox setup on Fedora. A non-Fedora Host OS could be used provided the requirements below are met.
+It might be useful to know in advance that this [How-To](https://computingforgeeks.com/how-to-install-vagrant-and-virtualbox-on-fedora/) guide provides the Vagrant & Virtualbox setup on Fedora. A non-Fedora Host OS could be used provided the requirements below are met, albeit not supported. 
 
 1. A host computer that can provide:
-    1. 2 cores and 2GB of RAM
-    1. A network interface connected to the internet
-1. A [Roon app](https://roonlabs.com/downloads) to play music
-1. [Vagrant](https://www.vagrantup.com/), the virtual machine manager; and Virtualbox with the extension pack
-1. A CIFS/SMB network share with your files
+    1. 2 cores and 2GB of RAM.
+    1. A network interface connected to the internet.
+1. A [Roon app](https://roonlabs.com/downloads) to play music.
+1. [Vagrant](https://www.vagrantup.com/), the virtual machine manager; and Virtualbox with the extension pack.
+1. A CIFS/SMB network share with your files.
 
 ## Installation Steps
 
@@ -46,11 +48,11 @@ Execute the following instructions in the host machine in order to bring up the 
 
     `vagrant up --provider virtualbox`
 
-Shall you require advanced configuration or troubleshooting of roonux, you can `vagrant ssh` into it. No instructions are currently provided to persist the VM across host reboots, this means that if you reboot your host machine then you'll need to execute the `vagrant up` command from the roonux directory to bring the VM up again.
+Shall you require advanced configuration or troubleshooting of roonux, you can `vagrant ssh` into it. No instructions are currently provided to restart the VM across host reboots, this means that if you reboot your host machine then you'll need to execute the `vagrant up` command from the roonux directory to bring the VM up again.
 
 ### On the Roon Control
 
-You may have installed the Roon control application in either a desktop computeror smartphone/tablet, any of those will help for viewing and configuring the Roon Core.
+You may have installed the Roon control application in either a desktop computer or smartphone/tablet, any of those will help for viewing and configuring the Roon Core.
 
 1. Open the Roon application on your computer/device
 2. If this is the first time you bring up the application, it will directly scan for a Roon Core and roonux should appear as an option
