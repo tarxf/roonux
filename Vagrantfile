@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "fedora/39-cloud-base"
-  config.vm.box_version = "39.20231031.1"
+  config.vm.box = "fedora/41-cloud-base"
   #  configure as public network for other devices find this instance
   config.vm.network "public_network"
   config.vm.hostname = "roonux"

@@ -14,6 +14,8 @@ dnf -y update
 # get the roonserver install script, make it run and clean it up
 [[ ! -f roonserver-installer-linuxx64.sh ]] && \
     wget http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh
+#remove deprecated option --show-progress from wget call
+sed -i 's/wget --show-progress/wget/gi' roonserver-installer-linuxx64.sh
 yes yes | bash roonserver-installer-linuxx64.sh
 rm roonserver-installer-linuxx64.sh
 # restore selinux security context for Roon Server
